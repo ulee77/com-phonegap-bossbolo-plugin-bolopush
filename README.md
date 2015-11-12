@@ -7,7 +7,7 @@ phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-xgpus
 ```
 卸载命令
 ```sh
-phonegap plugin add com-phonegap-bossbolo-plugin-xgpush
+phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 ```
 
 ##插件依赖
