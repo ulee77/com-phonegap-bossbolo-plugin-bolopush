@@ -76,13 +76,13 @@
 
 		<source-file src="src/android/BoloPush.java" target-dir="src/com/phonegap/bossbolo/plugin/xgpush" />
         <source-file src="src/android/PushReceiver.java" target-dir="src/com/phonegap/bossbolo/plugin/xgpush" />
-		<source-file src="src/android/libs/Xg_sdk_v2.41_20150915_1121.jar" target-dir="libs/Xg_sdk_v2.41_20150915_1121.jar" />
-		<source-file src="src/android/libs/wup-1.0.0.E-SNAPSHOT.jar" target-dir="libs/wup-1.0.0.E-SNAPSHOT.jar" />
-		<source-file src="src/android/libs/jg_filter_sdk_1.1.jar" target-dir="libs/jg_filter_sdk_1.1.jar" />
-		<source-file src="src/android/libs/armeabi/libtpnsSecurity.so" target-dir="libs/armeabi/libtpnsSecurity.so" />
-		<source-file src="src/android/libs/armeabi/libtpnsWatchdog.so" target-dir="libs/armeabi/libtpnsWatchdog.so" />
-		<source-file src="src/android/res/drawable/icon_notification.png" target-dir="res/drawable/libtpnsWatchdog.png" />
-		<source-file src="src/android/res/drawable/icon_small.png" target-dir="res/drawable/icon_small.png" />
+		<source-file src="src/android/libs/Xg_sdk_v2.41_20150915_1121.jar" target-dir="libs" />
+		<source-file src="src/android/libs/wup-1.0.0.E-SNAPSHOT.jar" target-dir="libs" />
+		<source-file src="src/android/libs/jg_filter_sdk_1.1.jar" target-dir="libs" />
+		<source-file src="src/android/libs/armeabi/libtpnsSecurity.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libtpnsWatchdog.so" target-dir="libs/armeabi" />
+		<source-file src="src/android/res/drawable/icon_notification.png" target-dir="res/drawable" />
+		<source-file src="src/android/res/drawable/icon_small.png" target-dir="res/drawable" />
     </platform>
 
 </plugin>
