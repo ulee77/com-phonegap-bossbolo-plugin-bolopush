@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "name": "com-phonegap-bossbolo-plugin-xgpush",
+    "description": "布络socket通讯基础框架.",
+    "cordova": {
+        "id": "com-phonegap-bossbolo-plugin-xgpush",
+        "platforms": [
+            "android"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "phonegap",
+        "bossbolo",
+        "BoloPlugin",
+        "boloPlugin",
+        "boloplugin",
+        "BoloPush",
+        "boloPush",
+        "bolopush",
+        "push",
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ulee77/com-phonegap-bossbolo-plugin-xgpush.git"
+    },
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ],
+    "author": "Apache Software Foundation",
+    "license": "Apache 2.0"
+}

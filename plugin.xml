@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com-phonegap-bossbolo-plugin-xgpush"
+        version="1.1.0">
+    <name>BoloPush</name>
+    <description>
+		push、notification插件
+	</description>
+    <license>Apache 2.0</license>
+    <keywords>push,bolopush,BoloPush,boloPush,cordova,bossbolo</keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <!-- 设置依赖插件,或者绑定其他插件  id:plugin id -->
+     <dependency id="com-phonegap-bossbolo-plugin" />
+
+    <js-module src="www/BoloPush.js" name="BoloPush">
+        <clobbers target="window.BoloPush" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <!-- 导入信鸽插件 -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:name="com.phonegap.bossbolo.plugin.xgpush.PushReceiver" android:process=":xg_service_v2">
+                <intent-filter android:priority="0x7fffffff">
+                    <action android:name="com.tencent.android.tpush.action.SDK" />
+                    <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
+                    <action android:name="android.intent.action.USER_PRESENT" />
+                    <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                    <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                    <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                    <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                </intent-filter>
+            </receiver>
+            <activity android:exported="true" android:name="com.tencent.android.tpush.XGPushActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action" />
+                </intent-filter>
+            </activity>
+            <service android:exported="true" android:name="com.tencent.android.tpush.service.XGPushService"
+                     android:persistent="true" android:process=":xg_service_v2" />
+            <service android:exported="true" android:name="com.tencent.android.tpush.rpc.XGRemoteService">
+                <intent-filter>
+                    <action android:name="com.phonegap.bossbolo.plugin.xgpush.PushReceiver" />
+                </intent-filter>
+            </service>
+            <meta-data android:name="XG_V2_ACCESS_ID" android:value="2100162654" />
+            <meta-data android:name="XG_V2_ACCESS_KEY" android:value="A16G2KF4I6SY" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!-- 【必须】 信鸽SDK所需权限 -->
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+            <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+            <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+            <uses-permission android:name="android.permission.GET_TASKS" />
+            <uses-permission android:name="android.permission.READ_LOGS" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+            <!-- 【可选】 信鸽SDK所需权限 -->
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BATTERY_STATS" />
+        </config-file>
+
+		<source-file src="src/android/BoloPush.java" target-dir="com/phonegap/bossbolo/plugin/xgpush" />
+        <source-file src="src/android/PushReceiver.java" target-dir="com/phonegap/bossbolo/plugin/xgpush" />
+		<source-file src="src/android/libs/Xg_sdk_v2.41_20150915_1121.jar" target-dir="libs/Xg_sdk_v2.41_20150915_1121.jar" />
+		<source-file src="src/android/libs/wup-1.0.0.E-SNAPSHOT.jar" target-dir="libs/wup-1.0.0.E-SNAPSHOT.jar" />
+		<source-file src="src/android/libs/jg_filter_sdk_1.1.jar" target-dir="libs/jg_filter_sdk_1.1.jar" />
+		<source-file src="src/android/libs/armeabi/libtpnsSecurity.so" target-dir="libs/armeabi/libtpnsSecurity.so" />
+		<source-file src="src/android/libs/armeabi/libtpnsWatchdog.so" target-dir="libs/armeabi/libtpnsWatchdog.so" />
+		<source-file src="src/android/res/drawable/icon_notification.png" target-dir="res/drawable/libtpnsWatchdog.png" />
+		<source-file src="src/android/res/drawable/icon_small.png" target-dir="res/drawable/icon_small.png" />
+    </platform>
+
+</plugin>
