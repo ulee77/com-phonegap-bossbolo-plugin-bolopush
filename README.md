@@ -1,13 +1,13 @@
 # com-phonegap-bossbolo-plugin-xgpush
 布络phonegap 消息推送插件，插件基于腾讯信鸽推送
 
-## 安装插件
-```sh
-phonegap plugin add com-phonegap-bossbolo-plugin-xgpush
-```
-或
+## 插件的安装、卸载
 ```sh
 phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-xgpush.git
+```
+卸载命令
+```sh
+phonegap plugin add com-phonegap-bossbolo-plugin-xgpush
 ```
 
 ##插件依赖
