@@ -1,5 +1,3 @@
-cordova.define("com-phonegap-bossbolo-plugin-xgpush.BoloPush", function(require, exports, module) {
-
     var exec = require('cordova/exec');
 
     var defaults = {
@@ -55,4 +53,3 @@ cordova.define("com-phonegap-bossbolo-plugin-xgpush.BoloPush", function(require,
     };
 
     module.exports = BoloPush;
-});
