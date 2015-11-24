@@ -2,10 +2,12 @@
 布络phonegap 消息推送插件，插件基于腾讯信鸽推送
 
 ## 插件的安装、卸载
+#安装命令
+
 ```sh
 phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-xgpush.git
 ```
-卸载命令
+#卸载命令
 ```sh
 phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 ```
@@ -20,19 +22,19 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 
 ##通用接口说明
 
-注册消息推送服务，按照用户账号注册
+# 注册消息推送服务，按照用户账号注册
 ```sh
 var win = function(tocken){console.log("Device tocken:"+tocken);}
 var error = function(message){console.log("错误信息:"+message);}
 BoloPush.registerPush(account, win, error);
 ```
 
-反注册消息推送服务，取消注册后将会在接收推送消息
+# 反注册消息推送服务，取消注册后将会在接收推送消息
 ```sh
 BoloPush.unregisterPush();
 ```
 
-设置消息提醒参数
+# 设置消息提醒参数
 ```sh
 /**
  * 设置消息提醒参数
@@ -46,12 +48,13 @@ BoloPush.unregisterPush();
 BoloPush.setBuild(buildID, iconName, smallIconName, sound, vibrate);
 ```
 
-设置tag,tag用于推送用户分组
+# 设置tag,tag用于推送用户分组
+IOS支持添加多个
 ```sh
-BoloPush.setTag();
+BoloPush.setTag("四川");
 ```
 
-默认build设置信息
+# 默认build设置信息
 ```sh
 var defaults = {
     buildID : 12345678,

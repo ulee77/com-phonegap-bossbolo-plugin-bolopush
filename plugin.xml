@@ -24,6 +24,12 @@
     
     <!-- android -->
     <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BoloPush">
+                <param name="android-package" value="com.phonegap.bossbolo.plugin.xgpush.BoloPush"/>
+            </feature>
+        </config-file>
+
         <!-- 导入信鸽插件 -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <receiver android:name="com.phonegap.bossbolo.plugin.xgpush.PushReceiver" android:process=":xg_service_v2">
@@ -83,6 +89,23 @@
 		<source-file src="src/android/libs/armeabi/libtpnsWatchdog.so" target-dir="libs/armeabi" />
 		<source-file src="src/android/res/drawable/icon_notification.png" target-dir="res/drawable" />
 		<source-file src="src/android/res/drawable/icon_small.png" target-dir="res/drawable" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="BoloPush">
+                <param name="ios-package" value="BoloPush" />
+                <param name="onload" value="true" />
+            </feature>
+
+        </config-file>
+
+        <header-file src="src/ios/BoloPush.h" />
+        <source-file src="src/ios/BoloPush.m" />
+        <header-file src="src/ios/UMessage.h" />
+
     </platform>
 
 </plugin>

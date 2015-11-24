@@ -5,7 +5,8 @@
     "cordova": {
         "id": "com-phonegap-bossbolo-plugin-xgpush",
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     },
     "keywords": [
@@ -19,9 +20,7 @@
         "boloPush",
         "bolopush",
         "push",
-        "ecosystem:cordova",
-        "cordova-android",
-        "cordova-ios"
+        "ecosystem:cordova"
     ],
     "repository": {
         "type": "git",
