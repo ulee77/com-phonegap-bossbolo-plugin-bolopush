@@ -106,8 +106,7 @@
         <source-file src="src/ios/BoloPush.m" />
         <!-- 友盟插件库 -->
         <header-file src="src/ios/UMessage.h" />
-        <framework src="src/ios/libUMessage_Sdk.a" />
-        <framework src="libz.dylib" />
+        <header-file src="src/ios/libUMessage_Sdk.a" />
     </platform>
 
 </plugin>
