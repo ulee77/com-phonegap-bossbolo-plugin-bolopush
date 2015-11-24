@@ -105,6 +105,7 @@
         <header-file src="src/ios/BoloPush.h" />
         <source-file src="src/ios/BoloPush.m" />
         <header-file src="src/ios/UMessage.h" />
+        <framework src="src/ios/libUMessage_Sdk.a" />
 
     </platform>
 
