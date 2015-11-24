@@ -21,20 +21,20 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 - IOS 5+
 
 # IOS平台环境配置
-- __ref__: 添加 a 库：将plugin/com-phonegap-bossbolo-plugin-xgpush/libUMessage_Sdk.a 导入Frameworks中；
-- __ref__: 添加远程通知委托：application: application didReceiveRemoteNotification:
+- __1__ : 添加 a 库：将plugin/com-phonegap-bossbolo-plugin-xgpush/libUMessage_Sdk.a 导入Frameworks中；
+- __2__ : 添加远程通知委托：application: application didReceiveRemoteNotification:
 ```sh
 //在AppDelegate.m中
-`- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
     //添加代码
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BoloReceiveRemoteNotification" object:userInfo];
 }
 ```
-- __ref__: deviceToken委托：application:application didRegisterForRemoteNotificationsWithDeviceToken:
+- __3__: deviceToken委托：application:application didRegisterForRemoteNotificationsWithDeviceToken:
 ```sh
 //在AppDelegate.m中
-`- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     //添加代码
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BoloRemoteNotificationsWithDeviceToken" object:deviceToken];
