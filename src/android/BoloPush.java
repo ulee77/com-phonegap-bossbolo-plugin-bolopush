@@ -43,7 +43,12 @@ public class BoloPush extends CordovaPlugin {
         this.appContext = activity.getApplicationContext();
         //初始化push配置项
         XGPushConfig.enableDebug = false;
-        
+        try {
+			this.registerPush(null, null);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     @Override
@@ -77,18 +82,29 @@ public class BoloPush extends CordovaPlugin {
     }
     
     public void registerPush(JSONArray args, final CallbackContext callbackContext) throws JSONException{
-    	String account = args.getString(0);
-    	XGPushManager.registerPush(appContext, account, new XGIOperateCallback() {
+    	XGIOperateCallback callback = new XGIOperateCallback() {
     		public void onSuccess(Object data, int flag){
     			String tocken = XGPushConfig.getToken(appContext);
     			CustomGlobal.getInstance().setTocken(tocken);
-    			callbackContext.success(tocken);
+    			if(callbackContext!=null){
+    				callbackContext.success(tocken);
+    			}
     		}
     		public void onFail(Object data, int errCode, String msg) {
-    			callbackContext.error(msg);
+    			if(callbackContext!=null){
+    				callbackContext.error(msg);
+    			}
     			Log.d("TPush", "注册失败，错误码：" + errCode + ",错误信息：" + msg);
     		}
-    	});
+    	};
+    	
+    	if(args==null){
+    		XGPushManager.registerPush(appContext, callback);
+    	}else{
+    		String account = args.getString(0);
+    		XGPushManager.unregisterPush(appContext);
+        	XGPushManager.registerPush(appContext, account, callback);
+    	}
     }
     
     public void unregisterPush(){

@@ -41,6 +41,14 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 }
 ```
 
+# Android平台环境配置
+- __1__ : 应用信息设置
+    注册信鸽推送应用信息，并将 应用 ACCESS_ID、ACCESS_KEY 替换掉 AndroidManifest.xml 中的 "ACCESS_ID"、"ACCESS_KEY"
+
+- __2__ : 消息接收服务配置
+    将 AndroidManifest.xml 中  的 "应用包名" 改为当前应用的主包名。
+
+
 ##通用接口说明
 
 # 注册消息推送服务，按照用户账号注册

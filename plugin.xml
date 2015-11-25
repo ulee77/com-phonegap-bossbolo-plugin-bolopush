@@ -32,7 +32,7 @@
 
         <!-- 导入信鸽插件 -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <receiver android:name="com.phonegap.bossbolo.plugin.xgpush.PushReceiver" android:process=":xg_service_v2">
+            <receiver android:name="com.tencent.android.tpush.PushReceiver" android:process=":xg_service_v2">
                 <intent-filter android:priority="0x7fffffff">
                     <action android:name="com.tencent.android.tpush.action.SDK" />
                     <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
@@ -52,11 +52,11 @@
                      android:persistent="true" android:process=":xg_service_v2" />
             <service android:exported="true" android:name="com.tencent.android.tpush.rpc.XGRemoteService">
                 <intent-filter>
-                    <action android:name="com.phonegap.bossbolo.plugin.xgpush.PushReceiver" />
+                    <action android:name="应用包名.PUSH_ACTION" />
                 </intent-filter>
             </service>
-            <meta-data android:name="XG_V2_ACCESS_ID" android:value="2100162654" />
-            <meta-data android:name="XG_V2_ACCESS_KEY" android:value="A16G2KF4I6SY" />
+            <meta-data android:name="XG_V2_ACCESS_ID" android:value="ACCESS_ID" />
+            <meta-data android:name="XG_V2_ACCESS_KEY" android:value="ACCESS_KEY" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <!-- 【必须】 信鸽SDK所需权限 -->
