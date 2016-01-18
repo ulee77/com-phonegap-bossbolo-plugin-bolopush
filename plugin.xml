@@ -180,18 +180,18 @@
         
 		<source-file src="src/android/libs/armeabi/libcocklogic.so" target-dir="libs/armeabi" />
         <source-file src="src/android/libs/armeabi/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/armeabi-v7a/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/armeabi-v7a/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/arm64-v8a/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/arm64-v8a/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/mips/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/mips/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/mips64/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/mips64/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/x86/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/x86/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/x86_64/libcocklogic.so" target-dir="libs/armeabi" />
-        <source-file src="src/android/libs/x86_64/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi" />
+        <source-file src="src/android/libs/armeabi-v7a/libcocklogic.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libtnet-2.1.20.1-agoo.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/arm64-v8a/libcocklogic.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libtnet-2.1.20.1-agoo.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/mips/libcocklogic.so" target-dir="libs/mips" />
+        <source-file src="src/android/libs/mips/libtnet-2.1.20.1-agoo.so" target-dir="libs/mips" />
+        <source-file src="src/android/libs/mips64/libcocklogic.so" target-dir="libs/mips64" />
+        <source-file src="src/android/libs/mips64/libtnet-2.1.20.1-agoo.so" target-dir="libs/mips64" />
+        <source-file src="src/android/libs/x86/libcocklogic.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libtnet-2.1.20.1-agoo.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86_64/libcocklogic.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libtnet-2.1.20.1-agoo.so" target-dir="libs/x86_64" />
         
         
 		<source-file src="src/android/res/drawable-mdpi/umeng_push_notification_default_large_icon.png" target-dir="res/drawable-mdpi" />
