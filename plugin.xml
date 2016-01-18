@@ -30,7 +30,7 @@
             </feature>
         </config-file>
 
-        <!-- 导入信鸽插件 -->
+        <!-- 导入友盟插件 -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="UMENG_APPKEY" android:value="5680d53e67e58ec799000c66" />
             <!-- 监听通知点击或者忽略处理的广播 -->
@@ -80,7 +80,7 @@
                 android:name="com.umeng.message.RegistrationReceiver"
                 android:exported="false" >
                 <intent-filter>
-                    <action android:name="com.bossbolo.powerbjy.intent.action.COMMAND" />
+                    <action android:name="【应用包名】.intent.action.COMMAND" />
                 </intent-filter>
             </receiver>
             <receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
@@ -96,10 +96,10 @@
                 android:exported="true"
                 android:process=":push" >
                 <intent-filter>
-                    <action android:name="com.bossbolo.powerbjy.intent.action.START" />
+                    <action android:name="【应用包名】.intent.action.START" />
                 </intent-filter>
                 <intent-filter>
-                    <action android:name="com.bossbolo.powerbjy.intent.action.COCKROACH" />
+                    <action android:name="【应用包名】.intent.action.COCKROACH" />
                 </intent-filter>
                 <intent-filter>
                     <action android:name="org.agoo.android.intent.action.PING_V4" />
