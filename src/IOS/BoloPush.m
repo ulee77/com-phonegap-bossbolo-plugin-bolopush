@@ -21,7 +21,7 @@ bool foreground = NO;
 #pragma mark 对外开放接口
 
 //注册push服务
-- (void)registerPush:(CDVInvokedUrlCommand*)command
+- (void)enable:(CDVInvokedUrlCommand*)command
 {
     if([BoloCustomGlobal getInstance].deviceToken != nil){
         [self initForReregister];
@@ -29,7 +29,7 @@ bool foreground = NO;
 }
 
 //反注册push服务
-- (void)unregisterPush:(CDVInvokedUrlCommand*)command
+- (void)disable:(CDVInvokedUrlCommand*)command
 {
     [UMessage unregisterForRemoteNotifications];
     remoteNotification = NO;
@@ -132,7 +132,7 @@ bool foreground = NO;
 - (void) finishLaunchingWithOptions:(NSNotification*)launchOptions
 {
     foreground = YES;
-    [UMessage startWithAppkey:@"5653c89667e58e1ece007ad4" launchOptions:nil];
+    [UMessage startWithAppkey:@"5684ee17e0f55ae6240011a2" launchOptions:nil];
     [self initForReregister];
     [UMessage setLogEnabled:YES];
 }

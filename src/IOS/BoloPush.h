@@ -12,9 +12,9 @@
 
 @interface BoloPush : CDVPlugin
 
-- (void)registerPush:(CDVInvokedUrlCommand*)command;
+- (void)enable:(CDVInvokedUrlCommand*)command;
 
-- (void)unregisterPush:(CDVInvokedUrlCommand*)command;
+- (void)disable:(CDVInvokedUrlCommand*)command;
 
 - (void)setBuild:(CDVInvokedUrlCommand*)command;
 
