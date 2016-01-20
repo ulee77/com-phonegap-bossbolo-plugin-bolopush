@@ -1,5 +1,5 @@
 # com-phonegap-bossbolo-plugin-xgpush
-布络phonegap 消息推送插件，插件基于腾讯信鸽推送
+布络phonegap 消息推送插件，插件基于友盟推送
 
 ## 插件的安装、卸载
 #安装命令
@@ -19,6 +19,9 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 - phoengap 5+
 - Android 4+
 - IOS 5+
+
+# 注册友盟appkey地址
+http://www.umeng.com/
 
 # IOS平台环境配置
 - __1__ : 添加 a 库：将plugin/com-phonegap-bossbolo-plugin-xgpush/libUMessage_Sdk.a 导入Frameworks中；
@@ -43,24 +46,28 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 
 # Android平台环境配置
 - __1__ : 应用信息设置
-    注册信鸽推送应用信息，并将 应用 ACCESS_ID、ACCESS_KEY 替换掉 AndroidManifest.xml 中的 "ACCESS_ID"、"ACCESS_KEY"
+    将 AndroidManifest.xml 中的 UMENG_APPKEY 的 value 改为应用在友盟后台中注册的appkey
 
 - __2__ : 消息接收服务配置
-    将 AndroidManifest.xml 中  的 "应用包名" 改为当前应用的主包名。
+    将 AndroidManifest.xml 中的3个 "应用包名" 改为当前应用的主包名。
 
+- __3__ : 更改通知图标
+    将大、小图标放入 res/drawable-mdpi/ 目录中，注意文件名以及文件路径不可更改。文件名、规格如下：
+    小图标：umeng_push_notification_default_small_icon.png ； 规格——24*24
+    大图标：umeng_push_notification_default_large_icon.png ； 规格——64*64
 
 ##通用接口说明
 
-# 注册消息推送服务，按照用户账号注册
+# 开启消息推送服务
 ```sh
 var win = function(tocken){console.log("Device tocken:"+tocken);}
 var error = function(message){console.log("错误信息:"+message);}
-BoloPush.registerPush(account, win, error);
+BoloPush.enable(win, error);
 ```
 
-# 反注册消息推送服务，取消注册后将会在接收推送消息
+# 注销消息推送服务，取消注册后将会在接收推送消息
 ```sh
-BoloPush.unregisterPush();
+BoloPush.disable();
 ```
 
 # 设置消息提醒参数
@@ -68,13 +75,10 @@ BoloPush.unregisterPush();
 /**
  * 设置消息提醒参数
  * 每次调用将会生成新的 notification 对象
- * @param buildID           notification对象id
- * @param iconName          大图标名称，图标需要放在（ android：drawable ）资源文件夹中
- * @param smallIconName     小图标名称，图标需要放在（ android：drawable ）资源文件夹中
  * @param sound             是否开启声音，声音使用系统默认
  * @param vibrate           是否开启震动，默认震动3次间隔100毫秒，第一次600毫秒，第二次500毫秒，第三次100毫秒
  */
-BoloPush.setBuild(buildID, iconName, smallIconName, sound, vibrate);
+BoloPush.setBuild(sound, vibrate);
 ```
 
 # 设置tag,tag用于推送用户分组
