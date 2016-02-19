@@ -1,15 +1,15 @@
-# com-phonegap-bossbolo-plugin-xgpush
+# com-phonegap-bossbolo-plugin-bolopush
 布络phonegap 消息推送插件，插件基于友盟推送
 
 ## 插件的安装、卸载
 #安装命令
 
 ```sh
-phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-xgpush.git
+phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-bolopush.git
 ```
 #卸载命令
 ```sh
-phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
+phonegap plugin rm com-phonegap-bossbolo-plugin-bolopush
 ```
 
 ##插件依赖
@@ -24,7 +24,7 @@ phonegap plugin rm com-phonegap-bossbolo-plugin-xgpush
 http://www.umeng.com/
 
 # IOS平台环境配置
-- __1__ : 添加 a 库：将plugin/com-phonegap-bossbolo-plugin-xgpush/libUMessage_Sdk.a 导入Frameworks中；
+- __1__ : 添加 a 库：将plugin/com-phonegap-bossbolo-plugin-bolopush/libUMessage_Sdk.a 导入Frameworks中；
 - __2__ : 添加远程通知委托：application: application didReceiveRemoteNotification:
 ```sh
 //在AppDelegate.m中
